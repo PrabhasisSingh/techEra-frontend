@@ -19,7 +19,7 @@ export class RestDataSource {
     auth_token: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+        this.baseUrl = "https://techera-backend.herokuapp.com";
     }
 
     getTournamentList(): Observable<Tournament[]> {
