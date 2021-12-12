@@ -9,9 +9,6 @@ import { HttpHeaders } from '@angular/common/http';
 
 import { ResponseModel } from "./response.model";
 
-const PROTOCOL = "http";
-const PORT = 3000;
-
 @Injectable()
 export class RestDataSource {
 
