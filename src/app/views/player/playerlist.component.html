@@ -1,0 +1,42 @@
+<!-- <%- include ../partials/header.ejs }} -->
+<app-header></app-header>
+<!-- Main Content -->
+<main class="container">
+    <div class="row">
+        <h1>Player List</h1>
+        <br>
+        <div>
+            <a routerLink="/player/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-plus-circle"></i>
+                Add a new Player
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Player Name</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <!-- <% for(let count = 0; count < tournaments.length; count++) { }} -->
+                <tr *ngFor="let item of playerList">
+             
+                    <td class="text-center">{{ item.Name }}</td>
+                </tr>
+                <!-- <% } }} -->
+            </table>
+        </div>
+
+        <div>
+            <a routerLink="/player/match" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-thin fa-play"></i>
+                Start a Match
+            </a>
+        </div>
+    </div>
+</main>
+<!-- <%- include ../partials/footer.ejs }} -->
+<app-footer></app-footer>

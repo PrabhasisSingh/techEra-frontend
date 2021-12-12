@@ -1,0 +1,69 @@
+<h1> Match Page</h1>
+
+<div *ngIf="showPlayerList">
+<h2>Player List</h2>
+<table border="2">
+  <tr>
+   <th>
+    Name
+   </th>
+   <th>
+     Option
+   </th>
+  </tr>
+  <tr *ngFor="let player of playerList">
+    <td>
+      {{player.Name}}
+    </td>
+    <td>
+      <button (click)="SelectPlayer(player.Name,true)"> Select Player</button>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<div *ngIf="showQualified">
+<h2>Qualified</h2>
+<table border="2">
+  <tr>
+    <th>Player 1</th>
+    <th>Player 2</th>
+    <th>Option</th>
+  </tr>
+  <tr *ngFor= "let q of qualifiers">
+    <td>
+     {{q}}
+    </td>
+    <td>
+      <button (click)="SelectPlayer(q,false)" >Select Player</button>
+    </td>
+  </tr>
+</table>
+</div>
+
+<br>
+
+
+<div *ngIf="showHistory">
+  <h2>Summary</h2>
+  <table border="2">
+    <tr>
+      <th>Player 1</th>
+      <th>Player 2</th>
+      <th>Winner</th>
+    </tr>
+    <tr *ngFor="let m of matches">
+      <td> {{m.Player1}}</td>
+      <td> {{m.Player2}}</td>
+      <td> {{m.Winner}}</td>
+    </tr>
+  </table>
+
+</div>
+<br>
+
+<button (click)="GetWinner()">Find the Winner</button>
+<br>
+
+<h1 style="color: green; font-size: larger;">Winner is: {{champ}}</h1>
